@@ -30,3 +30,12 @@
 # Pisz kod.
 #_________________________________________________________________________
 
+papers = ["Attention Is All You Need", "GANs in Action", "A Survey on Transformers"]
+
+def has_any_long_papers(papers):
+    for title in papers:
+        if len(title) >= 20:
+            return True
+    return False
+
+print(has_any_long_papers(papers))
