@@ -39,18 +39,33 @@ filepath = sys.argv[2]
 
 
 if command == "load":
-    print(papers_io.load_papers_from_json(filepath))
+    try:
+        print(papers_io.load_papers_from_json(filepath))
+    except FileNotFoundError:
+        print(f"File not found: {filepath}")
+        sys.exit(1)
+        
 elif command == "save":
     papers_io.save_papers_to_json(papers, filepath)
     print(f"Saved papers to {filepath}")
+    sys.exit(1)
+    
 elif command == "stats":
-    loaded_papers = papers_io.load_papers_from_json(filepath)
-    total_papers, long_papers = papers_io.paper_count(loaded_papers)
-    print(f"Total papers: {total_papers}")
-    print(f"Long papers: {long_papers}")
+    try:
+        loaded_papers = papers_io.load_papers_from_json(filepath)
+        total_papers, long_papers = papers_io.paper_count(loaded_papers)
+        print(f"Total papers: {total_papers}")
+        print(f"Long papers: {long_papers}")
+    except FileNotFoundError:
+        print(f"File not found: {filepath}")
+        sys.exit(1)
+     
+        
 elif command == "add":
-    loaded_papers = papers_io.load_papers_from_json(filepath)
-    loaded_papers.append(sys.argv[3])
-    papers_io.save_papers_to_json(loaded_papers, filepath)
-    print(f"Added: {sys.argv[3]}")
-
+    try:
+        loaded_papers = papers_io.load_papers_from_json(filepath)
+        loaded_papers.append(sys.argv[3])
+        papers_io.save_papers_to_json(loaded_papers, filepath)
+        print(f"Added: {sys.argv[3]}")
+    except FileNotFoundError:
+        print(f"File not found: {filepath}")
