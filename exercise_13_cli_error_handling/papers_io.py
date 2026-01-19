@@ -1,30 +1,48 @@
 #_______________________________________________________________________________________
-# ## Next task: Exercise 12 (final boss for today): “append”
+# Here is your next exercise: Exercise 13
 
-# Add a new command:
+# ### Goal
 
-# ```bash
-# python app.py add <filepath> "<title>"
-# ```
+# Add **basic file error handling** to your CLI so it doesn’t crash when the JSON file doesn’t exist.
 
-# Behavior:
+# ### Requirement
 
-# * load papers from `<filepath>` (file must exist)
-# * append the new title to the list
-# * save back to the same file
-# * print:
+# For commands that **read** a file:
+
+# * `load`
+# * `stats`
+# * `add`
+
+# If the filepath does **not** exist, print **exactly**:
 
 # ```text
-# Added: <title>
+# File not found: <filepath>
 # ```
+
+# …and exit with code `1` (use `sys.exit(1)`).
 
 # ### Rules
 
-# * Reuse your existing load/save functions.
-# * Don’t rewrite JSON handling in `app.py`.
-# * Minimal code, no libraries, no overengineering.
+# * Update **`app.py` only**
+# * Use `try/except`
+# * Catch **only** `FileNotFoundError`
+# * Do **not** catch broad exceptions (`except Exception:` is lazy and bad)
+# * Keep `papers_io.py` unchanged
 
-# Write the updated `app.py` only.
+# ### Hint (one, because I’m generous today)
+
+# Wrap the call that reads the file. Example pattern:
+
+# ```python
+# try:
+#     papers = papers_io.load_papers_from_json(filepath)
+# except FileNotFoundError:
+#     print(f"File not found: {filepath}")
+#     sys.exit(1)
+# ```
+
+# Do this only for the read commands. `save` should still create/overwrite the file normally.
+
 #_______________________________________________________________________________________
 
 import json
