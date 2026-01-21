@@ -25,6 +25,27 @@ def load_papers_or_exit(filepath):
         print(f"File not found: {filepath}")
         sys.exit(1)
 
+def cmd_save(filepath):
+    papers_io.save_papers_to_json(papers, filepath)
+    print(f"Saved papers to {filepath}")
+    
+def cmd_load(filepath):
+    print(load_papers_or_exit(filepath))
+    
+def cmd_stats(filepath):
+    loaded_papers = load_papers_or_exit(filepath)
+    total_papers, long_papers = papers_io.paper_count(loaded_papers)
+    print(f"Total papers: {total_papers}")
+    print(f"Long papers: {long_papers}")
+
+def cmd_add(filepath, title):
+    loaded_papers = load_papers_or_exit(filepath)
+    loaded_papers.append(title)
+    papers_io.save_papers_to_json(loaded_papers, filepath)
+    print(f"Added: {title}")
+    
+
+
 
 if len(sys.argv) < 2:
     print_usage_and_exit()
@@ -38,33 +59,30 @@ if command in ('load', 'save', 'stats'):
 elif command == "add":
     if len(sys.argv) != 4:
         print_usage_and_exit()
-else:
+
+if command not in ("save", "load", "stats", "add"):
     print(f"Unknown command: {command}")
     print_usage_and_exit()
+
     
 
 filepath = sys.argv[2]
 title = sys.argv[3] if command == "add" else None
 
+COMMANDS = {
+    "save": cmd_save,
+    "load": cmd_load,
+    "stats": cmd_stats,
+}
 
 
-if command == "load":
-    print(load_papers_or_exit(filepath))
-        
-elif command == "save":
-    papers_io.save_papers_to_json(papers, filepath)
-    print(f"Saved papers to {filepath}")
-    
-elif command == "stats":
-    loaded_papers = load_papers_or_exit(filepath)
-    total_papers, long_papers = papers_io.paper_count(loaded_papers)
-    print(f"Total papers: {total_papers}")
-    print(f"Long papers: {long_papers}")
-
-     
-        
+handler = COMMANDS.get(command)
+if handler:
+    handler(filepath)
 elif command == "add":
-    loaded_papers = load_papers_or_exit(filepath)
-    loaded_papers.append(title)
-    papers_io.save_papers_to_json(loaded_papers, filepath)
-    print(f"Added: {title}")
+    title = sys.argv[3]
+    cmd_add(filepath, title)
+    sys.exit(0)
+else:
+    print(f"Unknown command: {command}")
+    print_usage_and_exit()
