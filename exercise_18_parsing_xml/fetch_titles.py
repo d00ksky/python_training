@@ -9,7 +9,6 @@ with urllib.request.urlopen(URL) as response:
     
 xml_text = xml_bytes.decode("utf-8")
 
-print(xml_text)
 
 root = ET.fromstring(xml_text)
 
@@ -17,6 +16,7 @@ ns = {"a": "http://www.w3.org/2005/Atom"}
 
 
 entries = root.findall("a:entry", ns)
+print(entries)
 
 for i, entry in enumerate(entries[:5], start=1):
     title_el = entry.find("a:title", ns)
