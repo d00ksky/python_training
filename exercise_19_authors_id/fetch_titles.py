@@ -19,11 +19,17 @@ entries = root.findall("a:entry", ns)
 #print(entries)
 
 for i, entry in enumerate(entries[:5], start=1):
-    title_el = entry.find("a:title", ns)
-    title_id_el = entry.find("a:id", ns)
-    title = title_el.text.strip()
-    title_id = title_id_el.text.strip()
-    print(f"{i}: id = {title_id} title = {title}")
+    title = entry.find("a:title", ns).text.strip()
+    title_id = entry.find("a:id", ns).text.strip()
+    authors = []
+    for author in entry.findall("a:author", ns):
+        name = author.find("a:name", ns).text.strip()
+        authors.append(name)
+    print(f"{i}:")
+    print(f"  id: {title_id}")
+    print(f"  title: {title}")
+    print(f"  authors: {authors}")
+
 
     
 #print(ET.tostring(entries[0], encoding="unicode"))
