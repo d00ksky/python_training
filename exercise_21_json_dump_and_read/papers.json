@@ -1,0 +1,70 @@
+{
+  "papers": [
+    {
+      "id": "http://arxiv.org/abs/2201.00978v1",
+      "title": "PyramidTNT: Improved Transformer-in-Transformer Baselines with Pyramid Architecture",
+      "authors": [
+        "Kai Han",
+        "Jianyuan Guo",
+        "Yehui Tang",
+        "Yunhe Wang"
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/2104.11502v1",
+      "title": "Learning to Cluster Faces via Transformer",
+      "authors": [
+        "Jinxing Ye",
+        "Xioajiang Peng",
+        "Baigui Sun",
+        "Kai Wang",
+        "Xiuyu Sun",
+        "Hao Li",
+        "Hanqing Wu"
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/2404.05657v1",
+      "title": "MLP Can Be A Good Transformer Learner",
+      "authors": [
+        "Sihao Lin",
+        "Pumeng Lyu",
+        "Dongrui Liu",
+        "Tao Tang",
+        "Xiaodan Liang",
+        "Andy Song",
+        "Xiaojun Chang"
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/1809.04281v3",
+      "title": "Music Transformer",
+      "authors": [
+        "Cheng-Zhi Anna Huang",
+        "Ashish Vaswani",
+        "Jakob Uszkoreit",
+        "Noam Shazeer",
+        "Ian Simon",
+        "Curtis Hawthorne",
+        "Andrew M. Dai",
+        "Matthew D. Hoffman",
+        "Monica Dinculescu",
+        "Douglas Eck"
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/2212.14538v2",
+      "title": "Transformer in Transformer as Backbone for Deep Reinforcement Learning",
+      "authors": [
+        "Hangyu Mao",
+        "Rui Zhao",
+        "Hao Chen",
+        "Jianye Hao",
+        "Yiqun Chen",
+        "Dong Li",
+        "Junge Zhang",
+        "Zhen Xiao"
+      ]
+    }
+  ]
+}

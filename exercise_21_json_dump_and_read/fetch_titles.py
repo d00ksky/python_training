@@ -1,6 +1,6 @@
 import urllib.request
 import xml.etree.cElementTree as ET
-
+import json
 # n
 
 URL = "http://export.arxiv.org/api/query?search_query=all:transformer&start=0&max_results=5"
@@ -38,6 +38,21 @@ for entry in entries[:5]:
     # print(f"  authors: {authors}")
 
 
-print(papers)
+#print(papers)
 #print(ET.tostring(entries[0], encoding="unicode"))
 
+#_____________________________________________________________________
+
+data = {"papers": papers}
+
+with open("papers.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+
+
+with open("papers.json", encoding="utf-8") as f:
+    loaded = json.load(f)
+
+
+loaded_papers = loaded["papers"]
+print(f"count of papers = {len(loaded_papers)}")
+print(f"first paper title is = {loaded_papers[0]['title']}")
