@@ -1,0 +1,54 @@
+{
+  "papers": [
+    {
+      "id": "http://arxiv.org/abs/1408.5939v2",
+      "title": "Planar Induced Subgraphs of Sparse Graphs",
+      "authors": [
+        "Glencora Borradaile",
+        "David Eppstein",
+        "Pingan Zhu"
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/1402.2589v3",
+      "title": "Partitioning Perfect Graphs into Stars",
+      "authors": [
+        "René van Bevern",
+        "Robert Bredereck",
+        "Laurent Bulteau",
+        "Jiehua Chen",
+        "Vincent Froese",
+        "Rolf Niedermeier",
+        "Gerhard J. Woeginger"
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/0711.2360v2",
+      "title": "Every longest circuit of a 3-connected, $K_{3,3}$-minor free graph has a chord",
+      "authors": [
+        "E. Birmelé"
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/2107.01994v1",
+      "title": "Template-Based Graph Clustering",
+      "authors": [
+        "Mateus Riva",
+        "Florian Yger",
+        "Pietro Gori",
+        "Roberto M. Cesar",
+        "Isabelle Bloch"
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/1408.1422v1",
+      "title": "The Galois Complexity of Graph Drawing: Why Numerical Solutions are Ubiquitous for Force-Directed, Spectral, and Circle Packing Drawings",
+      "authors": [
+        "Michael J. Bannister",
+        "William E. Devanny",
+        "David Eppstein",
+        "Michael T. Goodrich"
+      ]
+    }
+  ]
+}
