@@ -1,0 +1,48 @@
+{
+  "papers": [
+    {
+      "id": "http://arxiv.org/abs/cond-mat/0309395v2",
+      "title": "This paper has been withdrawn",
+      "authors": [
+        "This paper has been withdrawn"
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/1410.4506v1",
+      "title": "Spectroscopic Needs for Calibration of LSST Photometric Redshifts",
+      "authors": [
+        "Samuel J. Schmidt",
+        "Jeffrey A. Newman",
+        "Alexandra Abate",
+        "the Spectroscopic Needs White Paper Team"
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/1410.4498v1",
+      "title": "Spectroscopic Needs for Training of LSST Photometric Redshifts",
+      "authors": [
+        "Alexandra Abate",
+        "Jeffrey A. Newman",
+        "Samuel J. Schmidt",
+        "the Spectroscopic Needs White Paper team"
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/alg-geom/9210008v3",
+      "title": "Erratum to \"The Homogeneous Coordinate Ring of a Toric Variety\", along with the original paper",
+      "authors": [
+        "David A. Cox"
+      ]
+    },
+    {
+      "id": "http://arxiv.org/abs/0705.2301v2",
+      "title": "Withrawn paper",
+      "authors": [
+        "Seungjoon Hyun",
+        "Jaehoon Jeong",
+        "Wontae Kim",
+        "John J. Oh"
+      ]
+    }
+  ]
+}
