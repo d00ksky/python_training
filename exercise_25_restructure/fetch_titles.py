@@ -4,14 +4,6 @@ import json
 import sys
 
 # n
-if len(sys.argv) < 2:
-    print("USAGE:")
-    print("python3 fetch_titles.py <query>")
-    sys.exit(1)
-else:
-    query = sys.argv[1]
-
-
 
 
 def fetch_papers(query, max_results=5):
