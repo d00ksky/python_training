@@ -47,21 +47,6 @@ def fetch_papers(query, max_results=5):
 #print(ET.tostring(entries[0], encoding="unicode"))
 
 #_____________________________________________________________________
-papers = fetch_papers(query)
-
-data = {"papers": papers}
-
-with open("papers.json", "w", encoding="utf-8") as f:
-    json.dump(data, f, indent=2, ensure_ascii=False)
-
-
-with open("papers.json", encoding="utf-8") as f:
-    loaded = json.load(f)
-
-
-loaded_papers = loaded["papers"]
-print(f"count of papers = {len(loaded_papers)}")
-print(f"first paper title is = {loaded_papers[0]['title']}")
 
 #_____________________________________________________________________
 
