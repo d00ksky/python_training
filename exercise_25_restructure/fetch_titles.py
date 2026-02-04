@@ -22,13 +22,25 @@ def fetch_papers(query, max_results=5):
     entries = root.findall("a:entry", ns)
     #print(entries)
     papers = []
+    
+    
 
-    for entry in entries:
-        title = entry.find("a:title", ns).text.strip()
-        title_id = entry.find("a:id", ns).text.strip()
+    for entry in entries: 
+        title_elem = entry.find("a:title", ns)
+        if title_elem is None or title_elem.text is None:
+            continue
+
+        title = title_elem.text.strip()
+        title_elem_id = entry.find("a:id", ns)
+        if title_elem_id is None or title_elem_id.text is None:
+            continue
+        title_id = title_elem_id.text.strip()
         authors = []
         for author in entry.findall("a:author", ns):
-            name = author.find("a:name", ns).text.strip()
+            name_elem = author.find("a:name", ns)
+            if name_elem is None or name_elem.text is None:
+                continue
+            name = name_elem.text.strip()
             authors.append(name)
         paper = {
             "id": title_id, 
